@@ -211,3 +211,5 @@ const products = [
       "rating": <AiFillStar className="rating" />,
     }
   ]
+
+  export default products;

@@ -6,6 +6,7 @@ import Products from "./Components/Products/Products";
 import SideBar from './Components/SideBar/SideBar';
 
 import products from "./database/products"
+import Cards from './Components/CardList';
 
 
 
@@ -24,6 +25,36 @@ function App() {
       setSelectedColor(event.target.value)
     }
 
+  function filteredData(products, selected, query){
+    let filteredProducts = products
+
+    if(query){
+      filteredProducts = filteredItems;
+
+    }
+
+    if (selected){
+      filteredProducts = filteredProducts.filter(
+      ({color, price, title}) =>
+      color === selected || price === selected || title === selected
+      );
+    }
+
+    return filteredProducts.map(
+      ({id, title, price, description, category, image, color, rating}) => (
+        <Cards
+        key={id}
+        title={title}
+        price={price}
+        description={description}
+        category={category}
+        image={image}
+        color={color}
+        rating={rating}
+        />
+      )
+    );
+  }
 
 
   return <>

@@ -14,6 +14,7 @@ function App() {
 
   const [query, setQuery] = useState("")
   const [selectedColor, setSelectedColor] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState(null)
   const handleChangeEvent = event =>{
     setQuery(event.target.value)}
   
@@ -56,11 +57,13 @@ function App() {
     );
   }
 
+  const result = filteredData(products, selectedCategory, query)
+
 
   return <>
   <BrowserRouter>
   <NavBar />
-  <SideBar />
+  <SideBar handleChangeEvent={handleChangeEvent} />
       <Products />
   </BrowserRouter>
       

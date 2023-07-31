@@ -62,9 +62,9 @@ function App() {
 
   return <>
   <BrowserRouter>
-  <NavBar />
+  <NavBar query={query} />
   <SideBar handleChangeEvent={handleChangeEvent} />
-      <Products />
+      <Products result={result} />
   </BrowserRouter>
       
   </>

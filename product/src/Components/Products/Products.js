@@ -1,13 +1,12 @@
 import React from 'react'
-import CardList from '../CardList'
 
 import "./Products.css"
 
-export default function Products() {
+export default function Products({result}) {
   return (
     <>
       <section className='card-container'>
-        <CardList />
+        {result}
       </section>
 
     </>

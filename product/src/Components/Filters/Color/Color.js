@@ -8,9 +8,24 @@ export default function Color(handleChangeEvent) {
      <Inputs
      handleChangeEvent={handleChangeEvent}
      value="white"
+     title="White"
+     name="name1"
+     color="white" />
+
+<Inputs
+     handleChangeEvent={handleChangeEvent}
+     value="black"
      title="Black"
      name="name1"
      color="black" />
+
+<Inputs
+     handleChangeEvent={handleChangeEvent}
+     value="red"
+     title="Red"
+     name="name1"
+     color="red" />
     </div>
+    
   )
 }

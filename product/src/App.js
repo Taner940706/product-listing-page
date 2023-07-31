@@ -15,14 +15,14 @@ function App() {
   const [query, setQuery] = useState("")
   const [selectedColor, setSelectedColor] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
-  const handleChangeEvent = event =>{
+  const handleChangeEvent = (event) =>{
     setQuery(event.target.value)}
   
     const filteredItems = products.filter(
-      (product) => product.title.toLowerCase().indexOf(query.toLowerCase() !== -1)
+      (product) => product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1
     );
 
-    const handleColorChange = event => {
+    const handleColorChange = (event) => {
       setSelectedColor(event.target.value)
     }
 
@@ -57,13 +57,13 @@ function App() {
     );
   }
 
-  const result = filteredData(products, selectedCategory, query)
+  const result = filteredData(products, selectedColor, query)
 
 
   return <>
   <BrowserRouter>
-  <NavBar query={query} />
-  <SideBar handleChangeEvent={handleChangeEvent} />
+  <NavBar query={query} handleChangeEvent={handleChangeEvent} />
+  <SideBar handleColorChange={handleColorChange} />
       <Products result={result} />
   </BrowserRouter>
       

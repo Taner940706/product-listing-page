@@ -1,18 +1,19 @@
 import React from 'react'
 import {Link} from "react-router-dom"
+import Category from '../Filters/Category/Category'
 
 import SearchBar from '../SearchBar/SearchBar'
 import "./NavBar.css"
 
-export default function NavBar() {
+export default function NavBar({handleChangeEvent, query}) {
   return (
     <div className='navbar'>
       <nav>
-        <SearchBar />
+        <SearchBar handleChangeEvent={handleChangeEvent} query={query}  />
         <Link to="/">
           <h1>All</h1>
         </Link>
-        <Link to="/men-clothing">
+        <Link to="/men-clothing" >
             <h1>Men's clothing</h1>
         </Link>
         <Link to="/women-clothing">
@@ -24,6 +25,7 @@ export default function NavBar() {
         <Link to="/electronics">
             <h1>Electronics</h1>
         </Link>
+        
       </nav>
       
     </div>
